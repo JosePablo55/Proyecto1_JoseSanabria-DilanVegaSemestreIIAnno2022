@@ -20,17 +20,16 @@ import javax.swing.ImageIcon;
  */
 public class RegistroJugadores extends JFrame implements ActionListener {
 private JTextField textfield1;
-  private JLabel label1,label2,label3;
+  private JLabel label1,label2,label3, label4;
   private JButton boton1,boton2, boton3,boton4,boton5;
   public int num2;
   private ImageIcon imagen1,imagen2,imagen3,imagen4;
   Jugador jugador2[];
-  public JFrame ventana;
     
   public RegistroJugadores(int num2){
      setLayout(null);
       setBounds(450,200,400,300);
-      setTitle("Registro de Jugadores");
+      setTitle("Registro de Jugadores para el juego");
       setResizable(false);
       setDefaultCloseOperation(DISPOSE_ON_CLOSE);
       //Aquí terminan las configuraciones de la ventana
@@ -44,6 +43,10 @@ private JTextField textfield1;
       label3.setBounds(10,30 , 250,30);
       add(label3);
       label3.setVisible(false);
+      label4= new JLabel("Debe llenar este campo");
+      label4.setBounds(10,30 , 250,30);
+      add(label4);
+      label4.setVisible(false);
       //Aquí termina de diseñarse la etiqueta para el num de jugadores
       textfield1=new JTextField();
       textfield1.setBounds(120, 15, 150, 20);
@@ -53,13 +56,6 @@ private JTextField textfield1;
       boton1.setBounds(10,200,100,30);
       add(boton1);
        boton2=new JButton("1");
-       this.imagen1=new ImageIcon("/src/Assets/loro.png");
-       boton2.setIcon(imagen1);
-       boton2.setIconTextGap(2);
-       boton2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        boton2.setVerticalAlignment(javax.swing.SwingConstants.CENTER);
-         boton2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-          boton2.setVerticalAlignment(javax.swing.SwingConstants.CENTER);
       boton2.setBounds(10,100,50,50);
       add(boton2);
       boton3=new JButton("2");
@@ -74,32 +70,40 @@ private JTextField textfield1;
       
       //Aquí termina de diseñarse el boton
       boton1.addActionListener(this); //inicializar escuchar el boton
-      boton2.addActionListener(this);
-      boton3.addActionListener(this);
-      boton4.addActionListener(this);
+      //boton2.addActionListener(this);
+      //boton3.addActionListener(this);
+      //boton4.addActionListener(this);
+      //boton5.addActionListener(this);
       
       setVisible(true); //Se hace la ventana Visible
       
       this.num2=num2;
      this.jugador2=new Jugador[num2];
-     ventana=this;
+     
     }//Fin constructor
   
     int i=0;
    @Override
     public void actionPerformed(ActionEvent e) {
+       
         //El siguiente ciclo for es para evitar que al correr el código devuelva error de null en jugador2[i]
         for(int r=0;r<num2;r++){
-           // jugador2[r]=new Jugador(0, 0);
+           //jugador2[r]=new Jugador(0, 0);
         }//Fin for
         
         //NumJugadores num=new NumJugadores();
         //dispose();
         //for(int i=0;i<num2;i++){
         boolean esDiferente=true;
+     if(textfield1.getText().equals("")==true){
+         label3.setVisible(false);
+         label4.setVisible(true);
+     }else if(textfield1.getText().equals("")==false){
        if(e.getSource()==boton1){
+           label4.setVisible(false);
          String usuario=textfield1.getText();
-         //jugador2[i].setNombreUsuario(usuario);
+         
+      
          if(jugador2[0]!=null){
              
              for(int j=0;j<jugador2.length;j++){
@@ -112,31 +116,49 @@ private JTextField textfield1;
                      }
                  }     
              }//Fin for 
-       }//Fin else
+       }//Fin if
          if(esDiferente==true){
+             //if(textfield1.getText()!=null){
+             System.out.println("5");
              jugador2[i]=new Jugador(0,0);
           jugador2[i].setNombreUsuario(usuario);
           i++; 
-         }else{
+             //}
+         }else if(esDiferente==false){
+             //if(textfield1.getText()==null){
              System.out.println("1");
              label3.setVisible(true);
+             //}
          }
-            
-       }
+         }//Fin if del boton 
+     }//Fin else
+         
+         //Fin if
+        
+         //}//Fin else del boton confirmar
+      /*
        if(e.getSource()==boton2){
+           jugador2[i]=new Jugador(0,0);
            jugador2[i].setFotoPerfil1(new ImageIcon(getClass().getResource("/Assets/loro.png")));
-           System.out.println("hola");
+          System.out.println("hola");
        }else if(e.getSource()==boton3){
+           jugador2[i]=new Jugador(0,0);
          jugador2[i].setFotoPerfil2(new ImageIcon(getClass().getResource("/Assets/pirata1.png")));
        }  if(e.getSource()==boton4){
+           jugador2[i]=new Jugador(0,0);
           jugador2[i].setFotoPerfil3(new ImageIcon(getClass().getResource("/Assets/pirata2.png")));
        } else if(e.getSource()==boton5){
+           jugador2[i]=new Jugador(0,0);
           jugador2[i].setFotoPerfil4(new ImageIcon(getClass().getResource("/Assets/pirata3.png")));
        }
+       */
        textfield1.setText(null);
        if(jugador2[num2-1]!=null){
+           System.out.println("true");
            this.dispose();
        }
+       
+       
        //i++;
         //}//Fin for
     }//Fin metodo actionPerformed
