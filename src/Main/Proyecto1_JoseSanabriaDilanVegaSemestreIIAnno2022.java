@@ -6,9 +6,10 @@ package Main;
 import GUI.JFVentanaPrincipal;
 import Utility.NumJugadores;
 import Dominio.RegistroJugadores;
-import Dominio.Ruleta;
+import Dominio.Ruleta2;
 import Dominio.JFMensajeGanador;
 import Dominio.RegistroJugadores;
+
 
 
 
@@ -25,6 +26,7 @@ public class Proyecto1_JoseSanabriaDilanVegaSemestreIIAnno2022 {
         NumJugadores num= new NumJugadores();
        //RegistroJugadores registro= new RegistroJugadores();
         //JFVentanaPrincipal ventana= new JFVentanaPrincipal();
+       
       //ventana.setVisible(true);
      //JFMensajeGanador mensaje=new JFMensajeGanador();
       //Ruleta ruleta = new Ruleta();

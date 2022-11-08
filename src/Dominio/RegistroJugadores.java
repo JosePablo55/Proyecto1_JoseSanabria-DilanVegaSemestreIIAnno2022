@@ -4,6 +4,7 @@
  */
 package Dominio;
 
+import GUI.JFRuleta;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -70,10 +71,10 @@ private JTextField textfield1;
       
       //Aquí termina de diseñarse el boton
       boton1.addActionListener(this); //inicializar escuchar el boton
-      //boton2.addActionListener(this);
-      //boton3.addActionListener(this);
-      //boton4.addActionListener(this);
-      //boton5.addActionListener(this);
+      boton2.addActionListener(this);
+      boton3.addActionListener(this);
+      boton4.addActionListener(this);
+      boton5.addActionListener(this);
       
       setVisible(true); //Se hace la ventana Visible
       
@@ -82,28 +83,38 @@ private JTextField textfield1;
      
     }//Fin constructor
   
-    int i=0;
+    int i=0, num=0,temp=0;
+    
    @Override
     public void actionPerformed(ActionEvent e) {
-       
-        //El siguiente ciclo for es para evitar que al correr el código devuelva error de null en jugador2[i]
-        for(int r=0;r<num2;r++){
-           //jugador2[r]=new Jugador(0, 0);
-        }//Fin for
         
-        //NumJugadores num=new NumJugadores();
-        //dispose();
-        //for(int i=0;i<num2;i++){
+         if((e.getSource()==boton2)){
+           //jugador2[i]=new Jugador(0,0);
+           temp=2;
+       }else if((e.getSource()==boton3)){
+           //jugador2[i]=new Jugador(0,0);
+           temp=3;
+       }  if((e.getSource()==boton4) && (textfield1.getText().equals("")!=true) && (e.getSource()==boton1)){
+           //jugador2[i]=new Jugador(0,0);
+           temp=4;
+       } else if((e.getSource()==boton5) && (textfield1.getText().equals("")!=true) && (e.getSource()==boton1)){
+           //jugador2[i]=new Jugador(0,0);
+           temp=5;
+       } 
+        
+        
         boolean esDiferente=true;
      if(textfield1.getText().equals("")==true){
          label3.setVisible(false);
          label4.setVisible(true);
      }else if(textfield1.getText().equals("")==false){
+         //if(e.getSource()==boton2 || e.getSource()==boton3 || e.getSource()==boton4 || e.getSource()==boton5){
        if(e.getSource()==boton1){
+           label3.setVisible(false);
            label4.setVisible(false);
          String usuario=textfield1.getText();
          
-      
+     
          if(jugador2[0]!=null){
              
              for(int j=0;j<jugador2.length;j++){
@@ -117,50 +128,52 @@ private JTextField textfield1;
                  }     
              }//Fin for 
        }//Fin if
-         if(esDiferente==true){
-             //if(textfield1.getText()!=null){
-             System.out.println("5");
-             jugador2[i]=new Jugador(0,0);
-          jugador2[i].setNombreUsuario(usuario);
-          i++; 
-             //}
-         }else if(esDiferente==false){
-             //if(textfield1.getText()==null){
-             System.out.println("1");
-             label3.setVisible(true);
-             //}
-         }
+         
+        
+           if (esDiferente == true) {
+               System.out.println("5");
+               jugador2[i] = new Jugador(0, 0);
+               jugador2[i].setNombreUsuario(usuario);
+               if (temp == 2) {
+                   jugador2[i].setFotoPerfil1(new ImageIcon(getClass().getResource("/Assets/loro.png")));
+                   System.out.println("hola1");
+               } else if (temp == 3) {
+                   jugador2[i].setFotoPerfil2(new ImageIcon(getClass().getResource("/Assets/pirata1.png")));
+                   System.out.println("hola2");
+               } else if (temp == 4) {
+                   jugador2[i].setFotoPerfil3(new ImageIcon(getClass().getResource("/Assets/pirata2.png")));
+                   System.out.println("hola3");
+               } else if (temp == 5) {
+                   jugador2[i].setFotoPerfil4(new ImageIcon(getClass().getResource("/Assets/pirata3.png")));
+                   System.out.println("hola4");
+               }
+               i++;
+               //}
+           } else if (esDiferente == false) {
+               System.out.println("1");
+               label3.setVisible(true);
+               //}
+           }
+       //}
          }//Fin if del boton 
      }//Fin else
          
          //Fin if
         
          //}//Fin else del boton confirmar
-      /*
-       if(e.getSource()==boton2){
-           jugador2[i]=new Jugador(0,0);
-           jugador2[i].setFotoPerfil1(new ImageIcon(getClass().getResource("/Assets/loro.png")));
-          System.out.println("hola");
-       }else if(e.getSource()==boton3){
-           jugador2[i]=new Jugador(0,0);
-         jugador2[i].setFotoPerfil2(new ImageIcon(getClass().getResource("/Assets/pirata1.png")));
-       }  if(e.getSource()==boton4){
-           jugador2[i]=new Jugador(0,0);
-          jugador2[i].setFotoPerfil3(new ImageIcon(getClass().getResource("/Assets/pirata2.png")));
-       } else if(e.getSource()==boton5){
-           jugador2[i]=new Jugador(0,0);
-          jugador2[i].setFotoPerfil4(new ImageIcon(getClass().getResource("/Assets/pirata3.png")));
-       }
-       */
+      
+         
+       
        textfield1.setText(null);
-       if(jugador2[num2-1]!=null){
+       if(jugador2[num2-1]!=null){  //jugador2[num2-1]!=null
            System.out.println("true");
            this.dispose();
+           
+            JFRuleta ruleta= new JFRuleta(jugador2);
+            ruleta.setVisible(true);
+            this.dispose(); 
        }
-       
-       
-       //i++;
-        //}//Fin for
+     
     }//Fin metodo actionPerformed
 
     public int getNum2() {

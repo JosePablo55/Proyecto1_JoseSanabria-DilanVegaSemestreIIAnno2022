@@ -9,7 +9,7 @@ package GUI;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 import Dominio.Mapa;
-import Dominio.Ruleta;
+import Dominio.Ruleta2;
 import Utility.EstructuraMapa;
 import Dominio.JFMensajeGanador;
 import javax.swing.WindowConstants;

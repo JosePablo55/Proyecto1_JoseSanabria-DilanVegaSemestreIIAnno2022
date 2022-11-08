@@ -72,6 +72,7 @@ public class Mapa{
         cartas2[11] = new Carta(350,510);
                 
        //Colocar cartas en las casillas de manera aleatoria
+       
        int r=0, cantidad2=24, rango2=24;
        int arreglo2[]= new int[cantidad2];
        
@@ -136,6 +137,7 @@ public class Mapa{
                 this.cartas[kw] = new CartaPistola(casillas[kw].getPosX(), casillas[kw].getPosY());
            }//Fin else
        }//Fin for
+       
        
       
        //COLOCAR 12 CARTAS DENTRO DEL CIRCULO DE LAS CASILLAS
