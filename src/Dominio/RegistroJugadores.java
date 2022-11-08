@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import Utility.NumJugadores;
 import java.awt.Color;
+import java.awt.Image;
 import javax.swing.ImageIcon;
 
 /**
@@ -45,42 +46,47 @@ public class RegistroJugadores extends JFrame implements ActionListener {
         label3.setBounds(10,30 , 250,30);
         add(label3);
         label3.setVisible(false);
-      label4= new JLabel("Debe llenar este campo");
-      label4.setBounds(10,30 , 250,30);
-      add(label4);
-      label4.setVisible(false);
-      //Aquí termina de diseñarse la etiqueta para el num de jugadores
-      textfield1=new JTextField();
-      textfield1.setBounds(120, 15, 150, 20);
-      add(textfield1); //Añadir el campo de texto a la ventana
-      //Aquí termina de diseñarse el campo de texto
-      boton1=new JButton("Confirmar");
-      boton1.setBounds(10,200,100,30);
-      add(boton1);
-       boton2=new JButton("1");
-      boton2.setBounds(10,100,50,50);
-      add(boton2);
-      boton3=new JButton("2");
-      boton3.setBounds(90,100,50,50);
-      add(boton3);
-      boton4=new JButton("3");
-      boton4.setBounds(170,100,50,50);
-      add(boton4);
-      boton5=new JButton("4");
-      boton5.setBounds(250,100,50,50);
-      add(boton5);
-      
-      //Aquí termina de diseñarse el boton
-      boton1.addActionListener(this); //inicializar escuchar el boton
-      boton2.addActionListener(this);
-      boton3.addActionListener(this);
-      boton4.addActionListener(this);
-      boton5.addActionListener(this);
-      
-      setVisible(true); //Se hace la ventana Visible
-      
-      this.num2=num2;
-     this.jugador2=new Jugador[num2];
+        label4= new JLabel("Debe llenar este campo");
+        label4.setBounds(10,30 , 250,30);
+        add(label4);
+        label4.setVisible(false);
+        //Aquí termina de diseñarse la etiqueta para el num de jugadores
+        textfield1=new JTextField();
+        textfield1.setBounds(120, 15, 150, 20);
+        add(textfield1); //Añadir el campo de texto a la ventana
+        //Aquí termina de diseñarse el campo de texto
+        
+        boton1=new JButton("Confirmar");
+        boton1.setBounds(10,200,100,30);
+        add(boton1);
+        boton2=new JButton();
+        boton2.setBounds(10,100,50,50);
+        this.boton2.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("/Assets/loro.png")).getImage().getScaledInstance(45, 45, Image.SCALE_DEFAULT)));
+        add(boton2);
+        boton3=new JButton("2");
+        boton3.setBounds(90,100,50,50);
+        this.boton3.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("/Assets/pirata1.png")).getImage().getScaledInstance(45, 45, Image.SCALE_DEFAULT)));
+        add(boton3);
+        boton4=new JButton("3");
+        boton4.setBounds(170,100,50,50);
+        this.boton4.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("/Assets/pirata2.png")).getImage().getScaledInstance(45, 45, Image.SCALE_DEFAULT)));
+        add(boton4);
+        boton5=new JButton("4");
+        boton5.setBounds(250,100,50,50);
+        this.boton5.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("/Assets/pirata3.png")).getImage().getScaledInstance(45, 45, Image.SCALE_DEFAULT)));
+        add(boton5);
+
+        //Aquí termina de diseñarse el boton
+        boton1.addActionListener(this); //inicializar escuchar el boton
+        boton2.addActionListener(this);
+        boton3.addActionListener(this);
+        boton4.addActionListener(this);
+        boton5.addActionListener(this);
+
+        setVisible(true); //Se hace la ventana Visible
+
+        this.num2=num2;
+        this.jugador2=new Jugador[num2];
      
     }//Fin constructor
     
