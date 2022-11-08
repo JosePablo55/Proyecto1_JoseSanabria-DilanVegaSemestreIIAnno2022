@@ -6,7 +6,10 @@ package Dominio;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 /**
@@ -19,7 +22,8 @@ public class CartaAlabarda extends Carta {
         super(posX, posY);
         this.num=0;
         try{
-            this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/alabarda.png"));
+            //EN EL CONSTRUCTOR NO DEBE SER ALABARDA, DEBE SER VOLTEADA
+            this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/espalda.png"));
         }catch(IOException e){
              e.printStackTrace();
         }
@@ -28,9 +32,20 @@ public class CartaAlabarda extends Carta {
     @Override
     public void dibujar(Graphics g) {
         super.dibujar(g); 
-       //g.setColor(Color.RED);
-       //g.fillOval(this.posX, this.posY, 50, 50);
     }//Fin método dibujar
+
+    @Override
+    public void voltear(int voltea) {
+        try {
+            if(voltea == 1){
+                this.imagen = ImageIO.read(getClass().getResourceAsStream("/Assets/alabarda.png"));
+            }else{
+                this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/espalda.png"));
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(CartaAlabarda.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
   
     

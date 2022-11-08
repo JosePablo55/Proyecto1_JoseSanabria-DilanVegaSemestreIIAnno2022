@@ -12,12 +12,10 @@ import java.awt.image.BufferedImage;
  * @author Jose Pablo
  */
 public class  Carta {
- protected BufferedImage imagen;
- protected int posX;
- protected int posY;
- protected int num;
-
- 
+    protected BufferedImage imagen;
+    protected int posX;
+    protected int posY;
+    protected int num;
  
     public Carta(int posX, int posY) {
         this.posX = posX;
@@ -50,5 +48,6 @@ public class  Carta {
 public void dibujar(Graphics g){
      g.drawImage(this.imagen, this.posX,this.posY,50,50,null);
 }//Fin método dibujar
-    
+
+public void voltear(int voltea){}
 }//Fin clase Carta
