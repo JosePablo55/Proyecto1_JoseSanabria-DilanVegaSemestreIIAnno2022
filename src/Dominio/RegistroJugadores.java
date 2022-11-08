@@ -90,41 +90,46 @@ public class RegistroJugadores extends JFrame implements ActionListener {
         
         if(e.getSource() == this.boton1){ //BOTÓN DE CONFIRMACIÓN
             String name = this.textfield1.getText();
-            boolean isDifferent = true;
-            if(this.jugador2[0] != null){
-                for(int i = 0; i < jugador2.length; i++){
-                    if(this.jugador2[i] != null){
-                        if(jugador2[i].getNombreUsuario().equals(name)){
-                            isDifferent = false;
-                            break;
+            if(!name.equals("")){
+                boolean isDifferent = true;
+                if(this.jugador2[0] != null){
+                    for(int i = 0; i < jugador2.length; i++){
+                        if(this.jugador2[i] != null){
+                            if(jugador2[i].getNombreUsuario().equals(name)){
+                                isDifferent = false;
+                                break;
+                            }
                         }
                     }
                 }
-            }
-        
-            if(isDifferent){
-                if(this.imagenAvatar != null){
-                    this.jugador2[nextJugador] = new Jugador(0, 0);
-                    this.jugador2[nextJugador].setNombreUsuario(name);
-                    this.jugador2[nextJugador].setFotoPerfil(this.imagenAvatar);
-                    this.textfield1.setText("");
-                    this.imagenAvatar = null;
-                    nextJugador++;
+
+                if(isDifferent){
+                    if(this.imagenAvatar != null){
+                        this.jugador2[nextJugador] = new Jugador(0, 0);
+                        this.jugador2[nextJugador].setNombreUsuario(name);
+                        this.jugador2[nextJugador].setFotoPerfil(this.imagenAvatar);
+                        this.textfield1.setText("");
+                        this.imagenAvatar = null;
+                        nextJugador++;
+                    }else{
+                        this.label3.setText("Debe definir un avatar");
+                        this.label3.setVisible(true);
+                        //this.label3 = new JLabel("Debe definir un avatar");
+                    }
                 }else{
-                    this.label3.setText("Debe definir un avatar");
+                    this.label3.setText("El usuario ingresado ya está registrado");
                     this.label3.setVisible(true);
-                    //this.label3 = new JLabel("Debe definir un avatar");
+                }
+
+                if(jugador2[num2-1]!=null){  //jugador2[num2-1]!=null
+                    System.out.println("true");
+                    this.dispose();
+                    JFRuleta ruleta= new JFRuleta(jugador2);
+                    ruleta.setVisible(true);
                 }
             }else{
-                this.label3.setText("El usuario ingresado ya está registrado");
+                this.label3.setText("Debe ingresar un nombre válido");
                 this.label3.setVisible(true);
-            }
-        
-            if(jugador2[num2-1]!=null){  //jugador2[num2-1]!=null
-                System.out.println("true");
-                this.dispose();
-                JFRuleta ruleta= new JFRuleta(jugador2);
-                ruleta.setVisible(true);
             }
         } //BOTÓN DE CONFIRMACIÓN
         
