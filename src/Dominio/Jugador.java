@@ -82,8 +82,7 @@ public class Jugador {
     }
     
     public void dibujar(Graphics g){
-        g.setColor(Color.BLACK);
-        g.fillOval(this.posX, this.posY, 50, 50);
+       g.drawImage(fotoPerfil.getImage(), this.posX, this.posY,50,50, null);
     }//Fin metodo dibujar
     
     public void quitarMoneda(){

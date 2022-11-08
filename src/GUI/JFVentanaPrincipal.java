@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import Dominio.Jugador;
 import javax.swing.JFrame;
 
 
@@ -13,12 +14,12 @@ import javax.swing.JFrame;
  */
 public class JFVentanaPrincipal extends JFrame{
     JPAreaJuego jpareajuego;
-    public JFVentanaPrincipal(){
+    public JFVentanaPrincipal(Jugador jugadores[]){
         
      super("Tesoro pirata");
         setSize(800,800);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.jpareajuego=new JPAreaJuego();
+        this.jpareajuego=new JPAreaJuego(jugadores);
         this.add(jpareajuego);
         setVisible(true);
         

@@ -43,6 +43,6 @@ public class Ruleta {
     }
     
     public void dibujar(Graphics g){
-        g.drawImage(this.imagenRuleta.getImage(), 150, 150, 350, 350, null);
+        g.drawImage(this.imagenRuleta.getImage(), 140, 85, 350, 350, null);
     }
 }

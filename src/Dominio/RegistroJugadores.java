@@ -96,7 +96,7 @@ public class RegistroJugadores extends JFrame implements ActionListener {
         
         if(e.getSource() == this.boton1){ //BOTÓN DE CONFIRMACIÓN
             String name = this.textfield1.getText();
-            if(!name.equals("")){
+            if(name.equals("")==false){
                 boolean isDifferent = true;
                 if(this.jugador2[0] != null){
                     for(int i = 0; i < jugador2.length; i++){

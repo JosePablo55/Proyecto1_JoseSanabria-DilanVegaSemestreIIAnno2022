@@ -32,31 +32,31 @@ public class Mapa{
    
     
     public void ColocarCasillas(){
-      
-       casillas[0]=new Casilla(350,30);
-       casillas[1]=new Casilla(440,40);
-       casillas[2]=new Casilla(510,60);
-       casillas[3]=new Casilla(570,110);
-       casillas[4]=new Casilla(620,180);
-       casillas[5]=new Casilla(650,250);
-       casillas[6]=new Casilla(670,320);
-       casillas[7]=new Casilla(660,390);
-       casillas[8]=new Casilla(640,450);
-       casillas[9]=new Casilla(610,510);
-       casillas[10]=new Casilla(540,550);
-       casillas[11]=new Casilla(450,570);
-       casillas[12]=new Casilla(350,580);
-       casillas[13]=new Casilla(260,570);
-       casillas[14]=new Casilla(170,550);
-       casillas[15]=new Casilla(110,510);
-       casillas[16]=new Casilla(70,450);
-       casillas[17]=new Casilla(50,390);
-       casillas[18]=new Casilla(40,320);
-       casillas[19]=new Casilla(50,250);
-       casillas[20]=new Casilla(70,180);
-       casillas[21]=new Casilla(120,110);
-       casillas[22]=new Casilla(180,60);
-       casillas[23]=new Casilla(260,40);
+
+       casillas[0]=new Casilla(350,30,0);
+       casillas[1]=new Casilla(440,40,1);
+       casillas[2]=new Casilla(510,60,2);
+       casillas[3]=new Casilla(570,110,3);
+       casillas[4]=new Casilla(620,180,4);
+       casillas[5]=new Casilla(650,250,5);
+       casillas[6]=new Casilla(670,320,6);
+       casillas[7]=new Casilla(660,390,7);
+       casillas[8]=new Casilla(640,450,8);
+       casillas[9]=new Casilla(610,510,9);
+       casillas[10]=new Casilla(540,550,10);
+       casillas[11]=new Casilla(450,570,11);
+       casillas[12]=new Casilla(350,580,12);
+       casillas[13]=new Casilla(260,570,13);
+       casillas[14]=new Casilla(170,550,14);
+       casillas[15]=new Casilla(110,510,15);
+       casillas[16]=new Casilla(70,450,16);
+       casillas[17]=new Casilla(50,390,17);
+       casillas[18]=new Casilla(40,320,18);
+       casillas[19]=new Casilla(50,250,19);
+       casillas[20]=new Casilla(70,180,20);
+       casillas[21]=new Casilla(120,110,21);
+       casillas[22]=new Casilla(180,60,22);
+       casillas[23]=new Casilla(260,40,23);
        
         cartas2[0] = new Carta(350, 110);
         cartas2[1] = new Carta(180, 180);
@@ -192,6 +192,9 @@ public class Mapa{
         }//Fin for
         }//Fin metodo dibujar
     
+     public Casilla getCasillaporID(int id){
+         return this.casillas[id];
+     }
 
     public Casilla[] getCasillas() {
         return casillas;

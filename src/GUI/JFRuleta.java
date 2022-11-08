@@ -26,6 +26,7 @@ public class JFRuleta extends JFrame implements ActionListener{
     private Timer giraRuletaTimer;
     private int delay, nextJugador = 0, turnoRandom = 0;
     JLabel label;
+  
     
     public JFRuleta(Jugador jugadores[]){
         this.setLayout(null);
@@ -42,11 +43,17 @@ public class JFRuleta extends JFrame implements ActionListener{
         add(this.giraRuletaBtn);
         
         this.botonInicioJuego=new JButton("INICIAR JUEGO");
-        //this.botonInicioJuego.setBounds();
-        
+       this.botonInicioJuego.setBounds(220,450,180,50);
+       add(botonInicioJuego);
+       botonInicioJuego.setVisible(false);
+       botonInicioJuego.addActionListener(this);
         this.setVisible(true);
         
         this.cargarRuleta();
+        this.label=new JLabel("");
+        label.setBounds(440,10,170,50);
+        add(label);
+        label.setVisible(false);
         
         
     }//Fin constructor
@@ -56,17 +63,25 @@ public class JFRuleta extends JFrame implements ActionListener{
         super.paint(g);
         this.ruleta.dibujar(this.getGraphics());
         g.setColor(Color.WHITE);
-        g.fillRect(300,300, 50, 50);
+        g.fillRect(290,235, 50, 50);
         g.setColor(Color.BLACK);
-        g.drawString("" + this.turnoRandom, 325, 325);
+        g.drawString("" + this.turnoRandom, 310, 266);
+        
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == giraRuletaBtn){
+           label.setText("TURNO DE "+jugadores[nextJugador].getNombreUsuario());
+           label.setVisible(true);
             delay = (int) (Math.random() * 10 + 1);
             this.giraRuletaTimer.start();
         }
+          if(e.getSource()==botonInicioJuego){
+           dispose();
+           JFVentanaPrincipal ventana= new JFVentanaPrincipal(this.jugadores);
+           ventana.setVisible(true);
+          }//Fin if
     }
     
     public void cargarRuleta(){
@@ -80,7 +95,7 @@ public class JFRuleta extends JFrame implements ActionListener{
                 turnoRandom = (int) (Math.random() * 12 + 1);
                 delay = delay + 2;
                 giraRuletaTimer.setDelay(delay);
-                if(delay >= 200){
+                if(delay >= 150){
                     boolean turnoExiste = false;
                     for(int i = 0; i < jugadores.length; i++){
                         if(jugadores[i].getTurno() == turnoRandom){
@@ -95,16 +110,16 @@ public class JFRuleta extends JFrame implements ActionListener{
                         System.out.println("T: " + jugadores[nextJugador].getTurno());
                         
                         giraRuletaTimer.stop();
-                        label=new JLabel(""+jugadores[nextJugador].getTurno());
-                        label.setBounds(315, 215, 150, 150);
-                        add(label);
+                        label.setText("TURNO DE "+jugadores[nextJugador].getNombreUsuario()+ ": " + turnoRandom);
                         label.setVisible(true);
-                        
                         nextJugador++;
                     }
                     
                     if(nextJugador == jugadores.length){
                         //dispose();
+                        botonInicioJuego.setVisible(true);
+                      
+                       
                     }
                 }
                 

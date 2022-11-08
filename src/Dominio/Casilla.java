@@ -12,10 +12,12 @@ public class Casilla {
     //Preguntar si las casillas sería lo mismo que el mapa(?)
     private int posX;
     private int posY;
+    private int iD;
 
-    public Casilla(int posX, int posY) {
+    public Casilla(int posX, int posY, int iD) {
         this.posX = posX;
         this.posY = posY;
+        this.iD=iD;
     }//Fin constructor
 
     public int getPosX() {
@@ -33,6 +35,16 @@ public class Casilla {
     public void setPosY(int posY) {
         this.posY = posY;
     }
+
+    public int getiD() {
+        return iD;
+    }
+
+    public void setiD(int iD) {
+        this.iD = iD;
+    }
+    
+    
     
     
 }//Fin clase Casilla

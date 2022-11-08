@@ -12,6 +12,8 @@ import Dominio.Mapa;
 import Dominio.Ruleta2;
 import Utility.EstructuraMapa;
 import Dominio.JFMensajeGanador;
+import Dominio.Juego;
+import Dominio.Jugador;
 import javax.swing.WindowConstants;
 
 /**
@@ -19,13 +21,13 @@ import javax.swing.WindowConstants;
  * @author Jose Pablo
  */
 public class JPAreaJuego extends JPanel{
-    Mapa mapa2;
+    private Juego juego;
     //MensajeGanador mensaje;
     //EstructuraMapa mapa1;
     //Ruleta ruleta;
-      public JPAreaJuego(){
+      public JPAreaJuego(Jugador jugadores[]){
         this.setSize(800,800);
-         this.mapa2=new Mapa();
+         this.juego=new Juego(jugadores);
         //this.mensaje=new MensajeGanador();
         //this.mapa1= new EstructuraMapa();
        //this.ruleta=new Ruleta();
@@ -36,8 +38,8 @@ public class JPAreaJuego extends JPanel{
      
         public void paintComponent(Graphics g){
             //this.mapa1.dibujar(g);
-            
-      this.mapa2.dibujar(g);
+            this.juego.dibujar(g);
+      //this.mapa2.dibujar(g);
       //  this.mensaje.dibujar(g);
        //this.ruleta.dibujar(g);
     
