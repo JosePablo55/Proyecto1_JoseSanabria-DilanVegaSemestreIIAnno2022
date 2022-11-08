@@ -18,8 +18,9 @@ public class Jugador {
     private int posY;
     private int turno;
     private int monedas;
-    public String nombreUsuario;
-    public ImageIcon fotoPerfil;
+    private int numeroCasilla;
+    private String nombreUsuario;
+    private ImageIcon fotoPerfil;
     //public int numJugadores;
     
     //Falta declarar la variable de la foto de perfil
@@ -30,6 +31,7 @@ public class Jugador {
         this.monedas=1;
         this.turno=0;//revisar esto
         this.nombreUsuario="";//revisar esto
+        this.numeroCasilla = 0;
         this.fotoPerfil = new ImageIcon(getClass().getResource(""));
     }//Fin constructor
 
@@ -79,6 +81,14 @@ public class Jugador {
 
     public ImageIcon getFotoPerfil() {
         return fotoPerfil;
+    }
+
+    public void setNumeroCasilla(int numeroCasilla) {
+        this.numeroCasilla = numeroCasilla;
+    }
+
+    public int getNumeroCasilla() {
+        return numeroCasilla;
     }
     
     public void dibujar(Graphics g){

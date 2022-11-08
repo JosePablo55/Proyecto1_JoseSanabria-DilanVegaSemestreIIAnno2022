@@ -87,75 +87,123 @@ public class Mapa{
             if(arreglo2[kw]==0){
                 this.cartas[kw] = new CartaAlabarda(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(0);
+                this.casillas[kw].setTipoCarta(0);
             }else  if(arreglo2[kw]==1){
                 this.cartas[kw] = new CartaAlfanaje(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(1);
+                this.casillas[kw].setTipoCarta(1);
             }else if(arreglo2[kw]==2){
                 this.cartas[kw] = new CartaArco(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(2);
+                this.casillas[kw].setTipoCarta(2);
             }else if(arreglo2[kw]==3){
                 this.cartas[kw] = new CartaBarco(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(3);
+                this.casillas[kw].setTipoCarta(3);
             }else if(arreglo2[kw]==4){
                 this.cartas[kw] = new CartaCanion(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(4);
+                this.casillas[kw].setTipoCarta(4);
             }else if(arreglo2[kw]==5){
                 this.cartas[kw] = new CartaDaga(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(5);
+                this.casillas[kw].setTipoCarta(5);
             }else if(arreglo2[kw]==6){
                 this.cartas[kw] = new CartaEsporton(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(6);
+                this.casillas[kw].setTipoCarta(6);
             }else  if(arreglo2[kw]==7){
                 this.cartas[kw] = new CartaGarfio(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(7);
+                this.casillas[kw].setTipoCarta(7);
             }else  if(arreglo2[kw]==8){
                 this.cartas[kw] = new CartaHacha(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(8);
+                this.casillas[kw].setTipoCarta(8);
             }else if(arreglo2[kw]==9){
                 this.cartas[kw] = new CartaMosquete(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(9);
+                this.casillas[kw].setTipoCarta(9);
             }else  if(arreglo2[kw]==10){
                 this.cartas[kw] = new CartaPedernal(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(10);
+                this.casillas[kw].setTipoCarta(10);
             }else if(arreglo2[kw]==11){
                 this.cartas[kw] = new CartaPistola(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(11);
+                this.casillas[kw].setTipoCarta(11);
             }else if(arreglo2[kw]==12){
                 this.cartas[kw] = new CartaAlabarda(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(0);
+                this.casillas[kw].setTipoCarta(0);
             }else if(arreglo2[kw]==13){
                 this.cartas[kw] = new CartaAlfanaje(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(1);
+                this.casillas[kw].setTipoCarta(1);
             }else if(arreglo2[kw]==14){
                 this.cartas[kw] = new CartaArco(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(2);
+                this.casillas[kw].setTipoCarta(2);
             }else if(arreglo2[kw]==15){
                 this.cartas[kw] = new CartaBarco(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(3);
+                this.casillas[kw].setTipoCarta(3);
             }else if(arreglo2[kw]==16){
                 this.cartas[kw] = new CartaCanion(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(4);
+                this.casillas[kw].setTipoCarta(4);
             }else if(arreglo2[kw]==17){
                 this.cartas[kw] = new CartaDaga(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(5);
+                this.casillas[kw].setTipoCarta(5);
             }else if(arreglo2[kw]==18){
                 this.cartas[kw] = new CartaEsporton(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(6);
+                this.casillas[kw].setTipoCarta(6);
             }else if(arreglo2[kw]==19){
                 this.cartas[kw] = new CartaGarfio(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(7);
+                this.casillas[kw].setTipoCarta(7);
             }else if(arreglo2[kw]==20){
                 this.cartas[kw] = new CartaHacha(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(8);
+                this.casillas[kw].setTipoCarta(8);
             }else if(arreglo2[kw]==21){
                 this.cartas[kw] = new CartaMosquete(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(9);
+                this.casillas[kw].setTipoCarta(9);
             }else if(arreglo2[kw]==22){
                 this.cartas[kw] = new CartaPedernal(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(10);
+                this.casillas[kw].setTipoCarta(10);
             }else if(arreglo2[kw]==23){
                 this.cartas[kw] = new CartaPistola(casillas[kw].getPosX(), casillas[kw].getPosY());
                 this.cartas[kw].voltear(1);
+                this.cartas[kw].setNum(11);
+                this.casillas[kw].setTipoCarta(11);
             }//Fin else
         }//Fin for
 
@@ -175,28 +223,40 @@ public class Mapa{
         for(int k=0;k<cantidad;k++){
             if(arreglo[k]==0){
                 this.cartas2[k] = new CartaAlabarda(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             } else if(arreglo[k]==1){
                 this.cartas2[k] = new CartaAlfanaje(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             }else if(arreglo[k]==2){
                 this.cartas2[k] = new CartaArco(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             }else if(arreglo[k]==3){
                 this.cartas2[k] = new CartaBarco(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             }else if(arreglo[k]==4){
                 this.cartas2[k] = new CartaCanion(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             }else if(arreglo[k]==5){
                 this.cartas2[k] = new CartaDaga(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             }else if(arreglo[k]==6){
                 this.cartas2[k] = new CartaEsporton(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             }else if(arreglo[k]==7){
                 this.cartas2[k] = new CartaGarfio(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             }else if(arreglo[k]==8){
                 this.cartas2[k] = new CartaHacha(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             }else if(arreglo[k]==9){
                 this.cartas2[k] = new CartaMosquete(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             }else if(arreglo[k]==10){
                 this.cartas2[k] = new CartaPedernal(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             }else if(arreglo[k]==11){
                 this.cartas2[k] = new CartaPistola(cartas2[k].getPosX(),cartas2[k].getPosY());
+                this.cartas2[k].setNum(arreglo[k]);
             }//Fin if
         }//Fin for
     }//Fin método ColocarCasillas
@@ -229,6 +289,10 @@ public class Mapa{
     public Carta[] getCartas() {
         return cartas;
     }
+    
+    public Carta getCartaporId(int id) {
+        return cartas[id];
+    }
 
     public void setCartas(Carta[] cartas) {
         this.cartas = cartas;
@@ -237,6 +301,10 @@ public class Mapa{
 //getCartas2 y setCartas2 son los metodos de acceso para las cartas del centro(util a la hora de compararla con la volteada)
     public Carta[] getCartas2() {
         return cartas2;
+    }
+    
+    public Carta getCarta2porId(int id){
+        return this.cartas2[id];
     }
 
     public void setCartas2(Carta[] cartas2) {

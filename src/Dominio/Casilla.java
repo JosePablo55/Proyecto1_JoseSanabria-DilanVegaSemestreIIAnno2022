@@ -13,11 +13,15 @@ public class Casilla {
     private int posX;
     private int posY;
     private int iD;
+    private int tipoCarta;
+    private Jugador jugador;
 
     public Casilla(int posX, int posY, int iD) {
         this.posX = posX;
         this.posY = posY;
         this.iD=iD;
+        this.tipoCarta = 0;
+        this.jugador = null;
     }//Fin constructor
 
     public int getPosX() {
@@ -43,8 +47,28 @@ public class Casilla {
     public void setiD(int iD) {
         this.iD = iD;
     }
+
+    public void setTipoCarta(int tipoCarta) {
+        this.tipoCarta = tipoCarta;
+    }
+
+    public int getTipoCarta() {
+        return tipoCarta;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
     
-    
-    
+    public boolean estaOcupada(){
+        if(this.jugador != null){
+            return true;
+        }
+        return false;
+    }
     
 }//Fin clase Casilla

@@ -40,21 +40,31 @@ public class Juego {
     }//Fin método 
     
     public void colocarJugadores(){
-        this.jugadores[0].setPosX(this.mapa.getCasillaporID(0).getPosX());
-        this.jugadores[0].setPosY(this.mapa.getCasillaporID(0).getPosY());
         int posiciones=(int) this.mapa.getCasillas().length/this.jugadores.length;  
         for (int i=0; i < this.jugadores.length; i++) {
             int casilla = posiciones * i;
             if (casilla == 24) {
                 this.jugadores[i].setPosX(this.mapa.getCasillaporID(casilla-1).getPosX());
                 this.jugadores[i].setPosY(this.mapa.getCasillaporID(casilla-1).getPosY());
+                this.jugadores[i].setNumeroCasilla(casilla - 1);
+                this.mapa.getCasillaporID(casilla - 1).setJugador(this.jugadores[i]);
             }else{
                 this.jugadores[i].setPosX(this.mapa.getCasillaporID(casilla).getPosX());
                 this.jugadores[i].setPosY(this.mapa.getCasillaporID(casilla).getPosY());
+                this.jugadores[i].setNumeroCasilla(casilla);
+                this.mapa.getCasillaporID(casilla).setJugador(this.jugadores[i]);
             }
         }
-        
     }//Fin metodo
+    
+    public int getIdJugadorPorTurno(int turno){
+        for(int i = 0; i < this.jugadores.length; i++){
+            if(this.jugadores[i].getTurno() == turno){
+                return i;
+            }
+        }
+        return 0;
+    }
     
     public void dibujar(Graphics g){
         this.mapa.dibujar(g);

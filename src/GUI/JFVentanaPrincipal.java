@@ -19,7 +19,7 @@ public class JFVentanaPrincipal extends JFrame{
         
      super("Tesoro pirata");
         setSize(800,800);
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.jpareajuego=new JPAreaJuego(jugadores);
         this.add(jpareajuego);
         setVisible(true);

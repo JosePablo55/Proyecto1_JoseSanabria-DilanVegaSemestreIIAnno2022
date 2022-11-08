@@ -20,7 +20,6 @@ public class  Carta {
     public Carta(int posX, int posY) {
         this.posX = posX;
         this.posY = posY;
-       // this.num=getNum();
     }//Fin constructor
 
     public int getPosX() {
@@ -37,6 +36,10 @@ public class  Carta {
 
     public void setPosY(int posY) {
         this.posY = posY;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
     }
 
     public int getNum() {
