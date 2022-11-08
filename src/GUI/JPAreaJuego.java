@@ -16,6 +16,7 @@ import Dominio.Juego;
 import Dominio.Jugador;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -33,7 +34,7 @@ public class JPAreaJuego extends JPanel implements MouseListener{
     private int numTurno=0;
     private Jugador jugadores[];
     private Timer timerCartas;
-    private int delay;
+    private int delay, idCartaVoltear;
     //MensajeGanador mensaje;
     //EstructuraMapa mapa1;
     //Ruleta ruleta;
@@ -50,8 +51,30 @@ public class JPAreaJuego extends JPanel implements MouseListener{
        this.label2.setBounds(610,25,180,50);
        add(label2);
        label2.setVisible(true);
+       this.delay=1;
+       cargarTimerCartas();
+       this.addMouseListener(this);
     }//constructor
 
+    public void cargarTimerCartas(){
+        this.timerCartas= new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //Todo lo que el timer va hacer va a estar aquí
+                if(delay!=6){
+                    System.out.println("Hola"+delay);
+                    delay++;
+                }else{
+                    timerCartas.stop();
+                    //Voltear a espalda de nuevo
+                    delay = 1;
+                }
+                
+            }
+        });
+    }
+    
+    
     public void paintComponent(Graphics g) {
         this.juego.dibujar(g);
 
@@ -59,7 +82,14 @@ public class JPAreaJuego extends JPanel implements MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        
+        int x = e.getX();
+        int y = e.getY();
+        if(this.juego.getMapa().checkCarta2porPosicion(x, y)){
+            idCartaVoltear = this.juego.getMapa().getIdCareta2PorPosicion(x, y);
+            //Indicar que se voltee
+            timerCartas.start();
+            
+        }
     }
 
     @Override

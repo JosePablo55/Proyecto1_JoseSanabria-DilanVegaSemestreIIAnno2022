@@ -23,7 +23,7 @@ public class CartaAlabarda extends Carta {
         this.num=0;
         try{
             //EN EL CONSTRUCTOR NO DEBE SER ALABARDA, DEBE SER VOLTEADA
-            this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/espalda.png"));
+            this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/alabarda.png"));
         }catch(IOException e){
              e.printStackTrace();
         }

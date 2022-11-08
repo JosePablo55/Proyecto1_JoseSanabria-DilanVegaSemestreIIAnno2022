@@ -220,6 +220,34 @@ public class Mapa{
     public void setCartas2(Carta[] cartas2) {
         this.cartas2 = cartas2;
     }
+    
+    public boolean checkCarta2porPosicion(int x, int y){
+        for(int i = 0; i < this.cartas2.length; i++){
+            int cartaX = this.cartas2[i].getPosX();
+            int cartaY = this.cartas2[i].getPosY();
+            int cartaXW = cartaX + 50;
+            int cartaYH = cartaY + 50;
+            
+            if((x >= cartaX && x <= cartaXW) && (y >= cartaY && y <= cartaYH)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public int getIdCareta2PorPosicion(int x, int y){
+        for(int i = 0; i < this.cartas2.length; i++){
+            int cartaX = this.cartas2[i].getPosX();
+            int cartaY = this.cartas2[i].getPosY();
+            int cartaXW = cartaX + 50;
+            int cartaYH = cartaY + 50;
+            
+            if((x >= cartaX && x <= cartaXW) && (y >= cartaY && y <= cartaYH)){
+                return i;
+            }
+        }
+        return 0;
+    }
 
     
 
