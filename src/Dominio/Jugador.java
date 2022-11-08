@@ -19,7 +19,7 @@ public class Jugador {
     private int turno;
     private int monedas;
     public String nombreUsuario;
-    public ImageIcon fotoPerfil1,fotoPerfil2,fotoPerfil3,fotoPerfil4;
+    public ImageIcon fotoPerfil;
     //public int numJugadores;
     
     //Falta declarar la variable de la foto de perfil
@@ -30,15 +30,7 @@ public class Jugador {
         this.monedas=1;
         this.turno=0;//revisar esto
         this.nombreUsuario="";//revisar esto
-        
-        try{
-           fotoPerfil1=new ImageIcon(getClass().getResource("/Assets/loro.png"));
-           fotoPerfil2=new ImageIcon(getClass().getResource("/Assets/pirata1.png"));
-           fotoPerfil3=new ImageIcon(getClass().getResource("/Assets/pirata2.png"));
-           fotoPerfil4=new ImageIcon(getClass().getResource("/Assets/pirata3.png"));
-        }catch(Exception e){
-            System.out.println("Image cannot be found!");
-        }//Fin catch
+        this.fotoPerfil = new ImageIcon(getClass().getResource(""));
     }//Fin constructor
 
     public int getPosX() {
@@ -80,51 +72,14 @@ public class Jugador {
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }//Fin método de acceso setNombreUsuario
-
-    public ImageIcon getFotoPerfil1() {
-        return fotoPerfil1;
-    }
-
-    public void setFotoPerfil1(ImageIcon fotoPerfil1) {
-        this.fotoPerfil1 = fotoPerfil1;
-    }
-
-    public ImageIcon getFotoPerfil2() {
-        return fotoPerfil2;
-    }
-
-    public void setFotoPerfil2(ImageIcon fotoPerfil2) {
-        this.fotoPerfil2 = fotoPerfil2;
-    }
-
-    public ImageIcon getFotoPerfil3() {
-        return fotoPerfil3;
-    }
-
-    public void setFotoPerfil3(ImageIcon fotoPerfil3) {
-        this.fotoPerfil3 = fotoPerfil3;
-    }
-
-    public ImageIcon getFotoPerfil4() {
-        return fotoPerfil4;
-    }
-
-    public void setFotoPerfil4(ImageIcon fotoPerfil4) {
-        this.fotoPerfil4 = fotoPerfil4;
-    }
-
-  
     
-    
+    public void setFotoPerfil(ImageIcon foto) {
+        this.fotoPerfil = foto;
+    }
 
-    /* public int getNumJugadores() {   //Revisar esto
-        return numJugadores;
-    } 
-
-     public void setNumJugadores(int numJugadores) {   //Revisar esto
-        this.numJugadores = numJugadores;
-    } */
-    
+    public ImageIcon getFotoPerfil() {
+        return fotoPerfil;
+    }
     
     public void dibujar(Graphics g){
         g.setColor(Color.BLACK);
