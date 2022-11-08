@@ -95,7 +95,7 @@ public class JFRuleta extends JFrame implements ActionListener{
                 turnoRandom = (int) (Math.random() * 12 + 1);
                 delay = delay + 2;
                 giraRuletaTimer.setDelay(delay);
-                if(delay >= 150){
+                if(delay >= 100){
                     boolean turnoExiste = false;
                     for(int i = 0; i < jugadores.length; i++){
                         if(jugadores[i].getTurno() == turnoRandom){

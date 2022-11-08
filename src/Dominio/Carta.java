@@ -43,6 +43,7 @@ public class  Carta {
         return num;
     }
  
+    //agregar metodo public void voltear que lo que desempeñe sea la accion de cambairle
  
     
 public void dibujar(Graphics g){

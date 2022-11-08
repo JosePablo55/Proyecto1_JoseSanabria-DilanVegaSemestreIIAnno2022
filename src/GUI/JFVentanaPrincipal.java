@@ -14,6 +14,7 @@ import javax.swing.JFrame;
  */
 public class JFVentanaPrincipal extends JFrame{
     JPAreaJuego jpareajuego;
+   
     public JFVentanaPrincipal(Jugador jugadores[]){
         
      super("Tesoro pirata");

@@ -30,7 +30,7 @@ public class Juego {
         Jugador temp;
         for (int i = 0; i < jugadores.length - 1; i++) {
             for (int j = 0; j < jugadores.length - 1; j++) {
-                if (jugadores[j].getTurno() > jugadores[j + 1].getTurno()) {
+                if (jugadores[j].getTurno() < jugadores[j + 1].getTurno()) {
                     temp = jugadores[j];
                     jugadores[j] = jugadores[j + 1];
                     jugadores[j + 1] = temp;
@@ -85,7 +85,7 @@ public class Juego {
     }//Fin método TurnoJuego
 
     public Jugador[] getJugadores() {
-        return jugadores;
+        return this.jugadores;
     }
 
     public void setJugadores(Jugador[] jugadores) {
