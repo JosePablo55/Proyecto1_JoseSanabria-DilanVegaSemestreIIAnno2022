@@ -7,6 +7,8 @@ package Dominio;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 /**
@@ -19,7 +21,7 @@ public class CartaCanion extends Carta {
         super(posX, posY);
         this.num=4;
         try{
-            this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/canion.png"));
+            this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/espalda.png"));
         }catch(IOException e){
             System.out.println("Image cannot be found!");
         }
@@ -31,5 +33,18 @@ public class CartaCanion extends Carta {
         //g.setColor(Color.GRAY);
        //g.fillOval(this.posX, this.posY, 50, 50);
     }//Fin método dibujar
+
+    @Override
+    public void voltear(int voltea) {
+        try {
+            if(voltea == 1){
+                this.imagen = ImageIO.read(getClass().getResourceAsStream("/Assets/canion.png"));
+            }else{
+                this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/espalda.png"));
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(CartaAlabarda.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }//Fin Clase CartaCanion

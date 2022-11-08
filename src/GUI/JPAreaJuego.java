@@ -67,17 +67,18 @@ public class JPAreaJuego extends JPanel implements MouseListener{
                 }else{
                     timerCartas.stop();
                     //Voltear a espalda de nuevo
+                    juego.getMapa().voltearCarta(idCartaVoltear, 0);
                     delay = 1;
                 }
-                
+                repaint();
             }
         });
     }
     
     
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         this.juego.dibujar(g);
-
     }//paintcomponent
 
     @Override
@@ -85,32 +86,26 @@ public class JPAreaJuego extends JPanel implements MouseListener{
         int x = e.getX();
         int y = e.getY();
         if(this.juego.getMapa().checkCarta2porPosicion(x, y)){
+            //debemos reconocer la carta
             idCartaVoltear = this.juego.getMapa().getIdCareta2PorPosicion(x, y);
-            //Indicar que se voltee
+            //indicar que se voltee
+            this.juego.getMapa().voltearCarta(idCartaVoltear, 1);
+            repaint();
             timerCartas.start();
-            
         }
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
-       
-    }
+    public void mousePressed(MouseEvent e) {}
 
     @Override
-    public void mouseReleased(MouseEvent e) {
-       
-    }
+    public void mouseReleased(MouseEvent e) {}
 
     @Override
-    public void mouseEntered(MouseEvent e) {
-       
-    }
+    public void mouseEntered(MouseEvent e) {}
 
     @Override
-    public void mouseExited(MouseEvent e) {
-      
-    }
+    public void mouseExited(MouseEvent e) {}
 
     
     

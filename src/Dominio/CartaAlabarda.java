@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -23,7 +24,7 @@ public class CartaAlabarda extends Carta {
         this.num=0;
         try{
             //EN EL CONSTRUCTOR NO DEBE SER ALABARDA, DEBE SER VOLTEADA
-            this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/alabarda.png"));
+            this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/espalda.png"));
         }catch(IOException e){
              e.printStackTrace();
         }
@@ -31,7 +32,8 @@ public class CartaAlabarda extends Carta {
 
     @Override
     public void dibujar(Graphics g) {
-        super.dibujar(g); 
+        //super.dibujar(g); 
+        g.drawImage(this.imagen, posX, posY, 50, 50, null);
     }//Fin método dibujar
 
     @Override

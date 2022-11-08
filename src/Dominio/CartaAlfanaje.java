@@ -7,6 +7,8 @@ package Dominio;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 /**
@@ -19,7 +21,7 @@ public class CartaAlfanaje extends Carta {
         super(posX, posY);
         this.num=1;
         try{
-            this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/alfanje.png"));
+            this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/espalda.png"));
         }catch(IOException e){
             System.out.println("Image cannot be found!");
         }
@@ -36,5 +38,18 @@ public class CartaAlfanaje extends Carta {
     public int getNum() {
         return num;
     }//Fin método de acceso getNum
+
+    @Override
+    public void voltear(int voltea) {
+        try {
+            if(voltea == 1){
+                this.imagen = ImageIO.read(getClass().getResourceAsStream("/Assets/alfanje.png"));
+            }else{
+                this.imagen= ImageIO.read(getClass().getResourceAsStream("/Assets/espalda.png"));
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(CartaAlabarda.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }//Fin clase Alfanaje

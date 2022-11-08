@@ -44,11 +44,10 @@ public class  Carta {
     }
  
     //agregar metodo public void voltear que lo que desempeñe sea la accion de cambairle
- 
+    public void dibujar(Graphics g){
+        g.drawImage(this.imagen, this.posX,this.posY,50,50,null);
+    }//Fin método dibujar
     
-public void dibujar(Graphics g){
-     g.drawImage(this.imagen, this.posX,this.posY,50,50,null);
-}//Fin método dibujar
-
-public void voltear(int voltea){}
+    public void voltear(int voltea){}
+    
 }//Fin clase Carta
